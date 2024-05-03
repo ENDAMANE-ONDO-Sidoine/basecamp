@@ -11,14 +11,14 @@ import path from "path";
 import cors from "cors";
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT ;
 const HTML_FOLDER = path.join(__dirname, "../../frontend/build"); // Static files folder
 
 // Middlewares
 app.use(cors());
 app.use(
   session({
-    secret: process.env.SECRET_KEY as string || "1234",
+    secret: process.env.SECRET_KEY as string,
     resave: false,
     saveUninitialized: false,
     cookie: {

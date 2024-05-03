@@ -18,7 +18,7 @@ const HTML_FOLDER = path.join(__dirname, "../../frontend/build"); // Static file
 app.use(cors());
 app.use(
   session({
-    secret: process.env.SECRET_KEY as string || "1234",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {

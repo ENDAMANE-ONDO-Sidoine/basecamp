@@ -38,12 +38,12 @@ const prisma_session_store_1 = require("@quixo3/prisma-session-store");
 const path_1 = __importDefault(require("path"));
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 const HTML_FOLDER = path_1.default.join(__dirname, "../../frontend/build"); // Static files folder
 // Middlewares
 app.use((0, cors_1.default)());
 app.use((0, express_session_1.default)({
-    secret: process.env.SECRET_KEY,
+    secret: process.env.SECRET_KEY || "1234",
     resave: false,
     saveUninitialized: false,
     cookie: {
